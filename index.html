@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hello Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Work+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f6f7;
+    --surface: #ffffff;
+    --ink: #1c1f22;
+    --ink-soft: #565d63;
+    --accent: #4b3ff0;
+    --accent-soft: #ece9fe;
+    --rule: #dde1e3;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14161a;
+      --surface: #1b1e23;
+      --ink: #edeff1;
+      --ink-soft: #a4abb2;
+      --accent: #9b93ff;
+      --accent-soft: #262246;
+      --rule: #2b2f35;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #14161a;
+    --surface: #1b1e23;
+    --ink: #edeff1;
+    --ink-soft: #a4abb2;
+    --accent: #9b93ff;
+    --accent-soft: #262246;
+    --rule: #2b2f35;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Work Sans", -apple-system, "Segoe UI", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6vh 1.5rem;
+  }
+
+  main {
+    width: 100%;
+    max-width: 34rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    font-size: clamp(3rem, 11vw, 5.5rem);
+    line-height: 0.98;
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  h1 span {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  p.lede {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 34ch;
+  }
+
+  .card {
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    border-radius: 0.75rem;
+    padding: 1.1rem 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .card strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .pill {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  footer {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--rule);
+    padding-top: 1rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    main { animation: rise 0.5s ease both; }
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">final-project</p>
+  <h1>Hello, <span>world.</span></h1>
+  <p class="lede">이 페이지는 final-project 저장소의 첫 배포입니다. 여기서부터 프로젝트를 쌓아 올립니다.</p>
+  <div class="card">
+    <span>status: <strong>deployed</strong></span>
+    <span class="pill">index.html</span>
+  </div>
+  <footer>final-project · hello page</footer>
+</main>
+</body>
+</html>
